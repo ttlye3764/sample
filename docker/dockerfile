@@ -1,1 +1,8 @@
 FROM openjdk:11-ea-12-jdk
+WORKDIR /app
+EXPOSE 8080
+VOLUME /tmp
+ARG MODULE=proejectAR-server
+ARG JAR_FILE=${MODULE}/build/libs/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

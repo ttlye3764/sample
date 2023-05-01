@@ -5,4 +5,5 @@ VOLUME /tmp
 ARG MODULE=projectAR-api
 ARG JAR_FILE=${MODULE}/build/libs/server-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} /app/app.jar
+RUN ls ${JAR_FILE}
 ENTRYPOINT ["java","-jar","/app/app.jar"]
